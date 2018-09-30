@@ -1,0 +1,534 @@
+/*Variaveis*/
+$cor-primaria: #674582;
+$cor-secundaria: #C083B9;
+$font-size: 10px;
+
+
+/* Mixin com parametros */
+@mixin flexbox($flex-direction: row, $align-items: normal, $justify-content: normal){
+    -webkit-display: flex;
+    -ms-display: flex;
+    -moz-display: flex;
+    -o-display: flex;
+    display: flex;
+    flex-direction: $flex-direction;
+    align-items: $align-items;
+    justify-content: $justify-content;
+}
+
+/* Mixin sem parametros */
+/*
+@mixin flexbox{
+    display: flex;
+    -webkit-display: flex;
+    -ms-display: flex;
+    -moz-display: flex;
+    -o-display: flex;
+}*/
+
+
+
+/* --- MOBILE FIRST - iPhone 7 - width < 768px --- */
+/* --- GERAL --- */
+/*
+unidades preferidas para esse CSS
+margin, padding: rem
+font-size: rem
+width: %
+max-width: % ou px
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: $font-size; /* definir uma font-size padrão */
+}
+
+body {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+/* define que as imagens tem que ter o tamanho máximo da div mãe */
+.img-responsive {
+    width: 100%;
+}
+
+/* define o tamanho da caixa */
+.container {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 960px;
+}
+
+/* --- BOTAO --- */
+
+.btn {
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 1rem 3rem;
+    border-radius: 5px;
+    font-size: 1.8rem;
+    &_roxo {
+        color: white;
+        background-color: $cor-secundaria;
+        display: block;
+        max-width: 250px;
+        text-align: center;
+        transition: all .5s;
+        margin: 0 auto;
+        &:hover,
+        &:focus {
+            transform: translateY(-1rem);
+            box-shadow: 0 10px 10px rgba(0,0,0,.2);
+            background-color: rgb(192, 156, 188);
+        }
+        &:active {
+            transform: translateY(-.5rem);
+            box-shadow: 0 5px 5px rgba(0,0,0,.2);
+        }
+        
+        
+    }
+    &_center {
+        margin: 0 auto;
+    }
+}
+
+
+
+/* --- NAV --- */
+.navegacao {
+    background-color: $cor-primaria;
+    color: white;
+    text-transform: uppercase;
+    box-shadow: 0px 5px 5px rgba(0,0,0,.2);
+    padding: 1.5rem;
+    z-index: 99;
+    position: fixed;
+    width: 100%;
+    &__logo {
+        max-width: 200px;
+    }
+    &__box {
+       @include flexbox( $align-items: center, $justify-content: space-between);
+    }
+    &__itens {
+        position: absolute;
+        right: -700px;
+        top: 85px;
+        width: 100%;
+        background-color: $cor-primaria;
+        text-align: center;
+        padding: 3rem 0;
+        transition: right 1s;
+        &.ativo {
+            display: block;
+            right: 0;
+            top: 85px;
+            width: 100%;
+            background-color: $cor-primaria;
+            text-align: center;
+            padding: 3rem 0;
+            transition: right 1s;
+        }
+        li > a {
+            transition: all .2s;
+            &:hover {
+                color: $cor-secundaria;
+            }
+        }
+    }
+    &__menu-hamburguer img {
+        background-color: $cor-secundaria;
+        border-radius: 5px;
+    }
+    &__nav {
+        margin-bottom: 3rem;
+        margin-right: 2rem;
+        li {
+            font-size: 1.5rem;
+            margin: 1rem;
+        }
+    }
+    &__redes-sociais a {
+        margin: 0 1rem;
+    }
+}
+
+/* --- HEADER --- */
+.header {
+    min-height: 80vh;
+    height: 500px;
+    background: linear-gradient(rgba(255, 0, 255, 0.2),
+                                rgba(255, 0, 255, 0.2)),
+                url(../img/turma6.jpeg);
+    background-size: cover;
+    background-position: center 14%;
+    background-repeat: no-repeat;
+    @include flexbox($align-items: flex-end);
+    text-align: center;
+    padding: 11rem 2rem 5rem 2rem;
+    color: white;
+}
+.principal{
+    &__titulo {
+        text-transform: uppercase;
+        font-size: 2.5rem;
+        font-weight: 900;
+    }
+    &__sub {
+        font-weight: 300;
+        margin: 2rem 0 3rem 0;
+        font-size: 1.5rem;
+    }
+}
+
+/* --- SECTION MARAVILHOSAS --- */
+.maravilhosas{
+    &__titulo {
+        font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
+        color: $cor-primaria;
+        font-size: 2rem;
+        text-align: center;
+    }
+    &__box {
+        @include flexbox($justify-content: space-around);
+        flex-wrap: wrap;
+        
+        text-align: center;
+        color: $cor-primaria;
+    }
+    &__perfil {
+        max-width: 120px;
+        margin: 2rem;
+        img {
+            background-color: #63458a;
+            border-radius: 10px;
+        }
+        a {
+            img {
+                transition: all .5s;
+            }
+            &:hover {
+                text-decoration: underline;
+                img {
+                    box-shadow: 0 3px 10px rgba(0,0,0,.2);
+                }
+            }
+        }
+    }
+}
+
+
+/* --- FOOTER --- */
+.rodape {
+    background-color: #323534;
+    color: white;
+    font-size: .9rem;
+    @include flexbox($flex-direction: column, $align-items: center);
+    padding-top: .8rem;
+    &__principal {
+        @include flexbox($flex-direction: column, $align-items: center, $justify-content: space-between);
+        text-align: center;
+        padding: 1.5rem 0;
+        > * {
+            margin: 1rem 0;
+        }
+    }
+    &__navegacao {
+        > li {
+            font-size: 1.1rem;
+            margin: 1rem;
+        }
+        a {
+            transition: all .5s;
+            &:hover {
+                color: $cor-secundaria;
+            }
+        }
+    }
+
+    &__logo {
+        max-width: 200px;
+    }
+
+    &__redes-sociais {
+        a {
+            @include flexbox($align-items: center, $justify-content: center);
+            transition: all .5s;
+            &:hover {
+                color: $cor-secundaria;
+            }
+        }
+        img {
+            max-width: 10px;
+            margin-right: .5rem;
+        }
+        span {
+            @include flexbox;
+            font-size: 1.5rem;
+        }
+    }
+
+    &__cc {
+        width: 100%;
+        background-color: #292A2A;
+        font-size: 1rem;
+        opacity: 0.5;
+        text-align: center;
+    }
+    
+}
+
+
+
+/** ---- PERSONALIDADE ---- **/
+/* --- HEADER --- */
+ .header-personalidade {
+    @include flexbox(column, flex-end, center);
+    background-size: cover;
+    padding: 0 2rem;
+    color: white;
+    min-height: 80vh;
+    height: 500px;
+
+    &__titulo {
+        text-align: center;
+        font-size: 2.6rem;
+        text-transform: uppercase;
+    }
+}
+
+
+
+/* --- PEFIL DIVA--- */
+.secao-diva {
+    @include flexbox(column, center, center);
+    padding: 5rem 2rem;
+    margin: 0 auto;
+    &__titulo {
+        text-align: center;
+        font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
+        font-size: 2rem;
+        color: $cor-primaria;
+        &_esq {
+            margin-right: auto;
+        }
+    }
+    p {
+        color: #63458a;
+        font-size: 1.6rem;
+        line-height: 1.5;
+    }
+    &__introducao {
+        @include flexbox(column, center);
+
+    }
+    &__foto-perfil {
+        max-width: 18rem;
+        margin: 1rem;
+        background-color: #63458a;
+    }
+    &__citacao p {
+        font-weight: bold;
+        border: 1px solid #63458a;
+        text-align: center;
+        padding: 1rem;
+        font-size: 1.7rem;
+    }
+    &__historia {
+        @include flexbox(column, center);
+        flex-direction: column;
+        align-items: center;
+        padding: 5rem 0;
+    }
+}
+
+/* --- AUTORA --- */
+.secao-autora {
+    background-color: #e4b7e5;
+    @include flexbox($justify-content: center);
+     > div {
+        text-align: center;
+        @include flexbox(column, center, space-around);
+        padding: 2rem 0;
+    }
+
+    &__foto {
+        max-width: 150px;
+    }
+    &__dados {
+        color: #63458a;
+        font-size: 1.6rem;
+        line-height: 1.5;
+        margin-top: 1rem;
+    }
+
+    a {
+        font-style: italic;
+        text-decoration: underline;
+    }
+    
+}
+.secao-cta {
+    text-align: center;
+    padding: 4rem 0;
+}
+
+/*** MEDIA QUERIES ***/
+/* TABLET */
+@media (min-width: 768px) {
+    /* --- NAV --- */
+    .navegacao__itens {
+        position: static;
+        @include flexbox;
+        padding: 0;
+        width: auto;
+    }
+
+    .navegacao__nav {
+        margin-bottom: 0;
+    }
+    
+    .navegacao__itens ul {
+        @include flexbox($align-items: center, $justify-content: space-around);
+        width: 100%;
+        text-align: center;
+    }
+    
+    .navegacao__itens li {
+        font-size: 1.2rem;
+        margin: 0 .6rem;
+    }
+    
+    .navegacao__menu-hamburguer {
+        display: none;
+    }
+
+    /* --- HEADER --- */
+    .header {
+        min-height: 75vh;
+        text-align: left;
+        padding: 5rem 10rem;
+    }
+
+    .principal__titulo {
+        font-size: 2.9rem;
+    }
+    
+    .principal__sub {
+        font-size: 1.8rem;
+    }
+
+    .principal__btn {
+        margin: 0;
+    }
+
+    /* --- SECTION MARAVILHOSAS --- */
+    .maravilhosas {
+        padding: 4rem 0;
+    }
+
+    .maravilhosas__box > div {
+        max-width: 200px;
+        margin: 5rem;
+    }
+
+    .maravilhosas__perfil p {
+        font-size: 1.5rem;
+        margin-top: 1rem;
+    }
+
+    /* --- FOOTER --- */
+    .rodape {
+        padding-top: 0;
+    }
+
+    .rodape__principal {
+        @include flexbox(row, center, space-around);
+        width: 100%;
+    }
+
+    .rodape__logo img {
+        max-width: 250px;
+    }
+
+    .rodape__navegacao > li {
+        font-size: 1.5rem;;
+    }
+   
+    /** PERSONALIDADE **/
+    /* --- OUTRA HEADER --- */
+    .header-personalidade {
+        padding: 0 20rem;
+        @include flexbox($align-items: flex-end);
+    }
+
+    .header-personalidade__titulo {
+        font-size: 3.5rem;
+        text-align: center;
+    }
+}
+
+@media (min-width: 1024px) {
+    .principal {
+        max-width: 650px;
+    }
+    .secao-diva__introducao {
+        flex-direction: row;
+        margin: 3rem 0;
+    }
+    .secao-diva__foto-perfil {
+        max-width: 100%;
+        margin: 0 4rem;
+    }
+    .secao-diva p {
+        font-size: 1.7rem;
+    }
+    .secao-diva__citacao p {
+        font-size: 2.5rem;
+        padding: 4rem;
+    }
+    .secao-autora > div {
+        @include flexbox($flex-direction:row, $justify-content: center);
+        text-align: left;
+        padding: 0;
+    }
+    .secao-autora__dados {
+        margin: 0 3rem;
+    }
+
+}
+
+/* DESKTOP */
+@media (min-width: 1440px) {
+    .navegacao__box {
+        max-width: 80%;
+    }
+    .header {
+        min-height: 90vh;
+    }
+    .navegacao__itens li {
+        font-size: 1.5rem;
+        margin: 0 1rem;
+    }
+    .principal {
+        max-width: 650px;
+    }
+}
