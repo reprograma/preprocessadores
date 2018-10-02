@@ -1,0 +1,318 @@
+/* Variáveis */
+$cor-primaria: #829dad;
+$cor-branca: #fff;
+
+@mixin height_display{
+  height: auto;
+  display: block;
+}
+
+@mixin rgba_opacity($cor: $cor-primaria, $opacidade: 1){
+  color: rgba($cor, $opacidade);
+}
+
+@mixin borda-arredondada($raio: 5px){
+  border-radius: 5px;
+  -moz-border-radius: 5px; 
+  -webkit-border-radius: 5px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Nunito;
+  font-size: 16px;
+}
+
+ul, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: $cor-primaria;
+}
+
+a:hover {
+  color: #3c6360;
+}
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+  @media (max-width: 960px) {
+      width: 100%;
+      padding: 0 4%;
+  }
+}
+
+
+
+.transition {
+  transition: all 1s;
+}
+
+.nav {
+  background: $cor-primaria;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 99;
+  &__menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 85px;
+  }
+  &__link {
+    color: $cor-branca;
+    margin-right: 50px;
+    &:hover {
+      @include rgba_opacity($opacidade:.8);
+    }
+  }
+  &__mobile {
+    display: none;
+  }
+
+  @media (max-width: 420px) {
+      background-color: $cor-branca;
+      &__link {
+        display: none;
+      }
+      &__mobile {
+        display: block;
+      }
+  }
+}
+
+
+
+
+.banner {
+  background: url("../images/foto-banner.jpg");
+  background-size: cover;
+  margin-top: 85px;
+  text-align: center;
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  &__title {
+    font-size: 105px;
+    @include rgba_opacity( $cor-branca, .9 );
+    text-transform: uppercase;
+    font-family: 'Varela Round';
+    font-weight: 100;
+    padding-top: 80px;
+    letter-spacing: 8px;
+    @media (max-width: 850px) { 
+        font-size: 60px;
+    }
+    @media (max-width: 1024px) {
+        font-size: 80px;
+    }
+  }
+  &__subtitle {
+    @include rgba_opacity($cor-branca,  0.7);
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 28px;
+    @media (max-width: 850px) {
+        font-size: 18px;
+    }
+  }
+  &__btn {
+    display: inline-block;
+    margin-top: 40px;
+  }
+  @media (max-width: 420px) {
+      height: 400px;
+      background-position: -360px 0;
+  }
+
+}
+
+.btn {
+  color: $cor-branca;
+  text-transform: uppercase;
+  font-size: 14px;
+  padding: 15px 30px;
+  @include borda-arredondada;
+  &--primary {
+    background-color: $cor-primaria;
+    &:hover {
+      background-color: #36b0e0;
+      color: $cor-branca;
+    }
+ }
+}
+.about {
+  background-color: rgba(22, 22, 22, .8);
+  text-align: center;
+  padding: 40px;
+  color: $cor-branca;
+  &__title {
+    margin-bottom: 20px;
+  }
+}
+
+.destination {
+  padding: 80px 0;
+  &__border {
+    width: 30px;
+    height: 120px;
+    background-color: $cor-primaria;
+    display: block;
+  }
+  &__text {
+    margin-left: 30px;
+  }
+  &--siberia {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__img {
+      max-width: 740px;
+      width: 100%;
+      @include height_display;
+    }
+  }
+  &--groenlandia,
+  &--antartida {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    &__img {
+      max-height: 300px;
+      width: 100%;
+      @include height_display;
+    }
+    &__wrapper-img {
+      width: 50%;
+    }
+  }
+  &__description {
+    background: #161616;
+    height: inherit;
+    width: 50%;
+    &--groenlandia {
+      padding-left: 40px;
+    }
+    &--antartida {
+      padding-right: 40px;
+      text-align: right;
+    }
+  }
+  &__title {
+    color: $cor-branca;
+    font-size: 24px;
+    margin-bottom: 10px;
+    margin-top: 80px;
+  }
+  &_paragraph {
+    @include rgba_opacity($opacidade: .5);
+
+    &--groenlandia {
+      max-width: 80%;
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  .destination__border {
+    display: none;
+  }
+}
+@media (max-width: 960px) {
+  .destination--siberia {
+    display: block;
+    text-align: center;
+  }
+}
+@media (max-width: 960px) {
+  .destination--siberia__img {
+    max-width: 100%;
+  }
+}
+@media (max-width: 960px) {
+  .destination--groenlandia,
+  .destination--antartida {
+    @include height_display;
+  }
+
+  .destination--groenlandia {
+    margin-bottom: 40px;
+  }
+}
+@media (max-width: 960px) {
+  .destination--groenlandia__img,
+  .destination--antartida__img {
+    max-height: 100%;
+  }
+}
+@media (max-width: 960px) {
+  .destination__description {
+    width: 100%;
+    text-align: center;
+    padding: 40px;
+  }
+}
+@media (max-width: 960px) {
+  .destination__title {
+    margin-top: 0;
+  }
+}
+@media (max-width: 960px) {
+  .destination_paragraph--groenlandia {
+    max-width: 100%;
+  }
+}
+@media (max-width: 960px) {
+  .destination--groenlandia__wrapper-img,
+  .destination--antartida__wrapper-img {
+    width: 100%;
+  }
+}
+@media (max-width: 960px) {
+  .destination__description--antartida {
+    text-align: center;
+  }
+}
+
+.footer {
+  background-color: #161616;
+  margin-top: 80px;
+  text-align: center;
+  padding: 40px;
+  @include rgba_opacity($cor-branca, .5);
+  &__socialmedia {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 0;
+  }
+  &__twitter,
+  &__facebook,
+  &__youtube {
+  opacity: 0.5;
+  margin: 0 10px;
+    &:hover{
+      opacity: 1;
+    }
+  }
+}
+
+
+
+
+
