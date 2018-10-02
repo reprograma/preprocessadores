@@ -1,0 +1,9 @@
+.about {
+    background-color: rgba(22, 22, 22, .8);
+    text-align: center;
+    padding: 40px;
+    color: $cor-branca;
+    &__title {
+      margin-bottom: 20px;
+    }
+  }

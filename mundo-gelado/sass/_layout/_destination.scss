@@ -1,0 +1,104 @@
+
+.destination {
+    padding: 80px 0;
+    &__border {
+      width: 30px;
+      height: 120px;
+      background-color: $cor-primaria;
+      display: block;
+    }
+    &__text {
+      margin-left: 30px;
+    }
+    &--siberia {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &__img {
+        max-width: 740px;
+        width: 100%;
+        @include height_display;
+      }
+    }
+    &--groenlandia,
+    &--antartida {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 300px;
+      &__img {
+        max-height: 300px;
+        width: 100%;
+        @include height_display;
+      }
+      &__wrapper-img {
+        width: 50%;
+      }
+    }
+    &__description {
+      background: #161616;
+      height: inherit;
+      width: 50%;
+      &--groenlandia {
+        padding-left: 40px;
+      }
+      &--antartida {
+        padding-right: 40px;
+        text-align: right;
+      }
+    }
+    &__title {
+      color: $cor-branca;
+      font-size: 24px;
+      margin-bottom: 10px;
+      margin-top: 80px;
+      @media (max-width: 960px) {
+          margin-top: 0;
+      }
+    }
+    &_paragraph {
+      @include rgba_opacity($opacidade: .5);
+  
+      &--groenlandia {
+        max-width: 80%;
+      }
+    }
+  
+    @media (max-width: 960px) {
+      &__border {
+        display: none;
+      }
+      &--siberia {
+        display: block;
+        text-align: center;
+      }
+      &--siberia__img {
+        max-width: 100%;
+      }
+      &--groenlandia,
+      &--antartida {
+        @include height_display;
+        &__img{
+            max-height: 100%;
+        }
+        &__wrapper-img {
+        width: 100%;
+      }
+     }
+  
+    &--groenlandia {
+        margin-bottom: 40px;
+      }
+    &__description {
+      width: 100%;
+      text-align: center;
+      padding: 40px;
+    }
+    &_paragraph--groenlandia {
+      max-width: 100%;
+    }
+    &__description--antartida {
+      text-align: center;
+    }
+    }
+  }

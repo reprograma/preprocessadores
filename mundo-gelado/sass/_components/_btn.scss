@@ -1,0 +1,15 @@
+
+.btn {
+    color: $cor-branca;
+    text-transform: uppercase;
+    font-size: 14px;
+    padding: 15px 30px;
+    @include borda-arredondada;
+    &--primary {
+      background-color: $cor-primaria;
+      &:hover {
+        background-color: #36b0e0;
+        color: $cor-branca;
+      }
+   }
+  }

@@ -44,6 +44,25 @@ a:hover {
   transition: all 1s;
 }
 
+.btn {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 14px;
+  padding: 15px 30px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+.btn--primary {
+  background-color: #829dad;
+}
+
+.btn--primary:hover {
+  background-color: #36b0e0;
+  color: #fff;
+}
+
 .nav {
   background: #829dad;
   position: fixed;
@@ -146,25 +165,6 @@ a:hover {
     height: 400px;
     background-position: -360px 0;
   }
-}
-
-.btn {
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 14px;
-  padding: 15px 30px;
-  border-radius: 5px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-}
-
-.btn--primary {
-  background-color: #829dad;
-}
-
-.btn--primary:hover {
-  background-color: #36b0e0;
-  color: #fff;
 }
 
 .about {
