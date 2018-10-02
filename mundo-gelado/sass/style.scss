@@ -1,4 +1,4 @@
-/* Variáveis */
+// Variáveis
 $cor-primaria: #829dad;
 $cor-branca: #fff;
 
@@ -12,9 +12,9 @@ $cor-branca: #fff;
 }
 
 @mixin borda-arredondada($raio: 5px){
-  border-radius: 5px;
-  -moz-border-radius: 5px; 
-  -webkit-border-radius: 5px;
+  border-radius: $raio;
+  -moz-border-radius: $raio; 
+  -webkit-border-radius: $raio;
 }
 
 * {
@@ -218,6 +218,9 @@ a:hover {
     font-size: 24px;
     margin-bottom: 10px;
     margin-top: 80px;
+    @media (max-width: 960px) {
+        margin-top: 0;
+    }
   }
   &_paragraph {
     @include rgba_opacity($opacidade: .5);
@@ -226,68 +229,46 @@ a:hover {
       max-width: 80%;
     }
   }
-}
 
-@media (max-width: 960px) {
-  .destination__border {
-    display: none;
-  }
-}
-@media (max-width: 960px) {
-  .destination--siberia {
-    display: block;
-    text-align: center;
-  }
-}
-@media (max-width: 960px) {
-  .destination--siberia__img {
-    max-width: 100%;
-  }
-}
-@media (max-width: 960px) {
-  .destination--groenlandia,
-  .destination--antartida {
-    @include height_display;
-  }
+  @media (max-width: 960px) {
+    &__border {
+      display: none;
+    }
+    &--siberia {
+      display: block;
+      text-align: center;
+    }
+    &--siberia__img {
+      max-width: 100%;
+    }
+    &--groenlandia,
+    &--antartida {
+      @include height_display;
+      &__img{
+          max-height: 100%;
+      }
+      &__wrapper-img {
+      width: 100%;
+    }
+   }
 
-  .destination--groenlandia {
-    margin-bottom: 40px;
-  }
-}
-@media (max-width: 960px) {
-  .destination--groenlandia__img,
-  .destination--antartida__img {
-    max-height: 100%;
-  }
-}
-@media (max-width: 960px) {
-  .destination__description {
+  &--groenlandia {
+      margin-bottom: 40px;
+    }
+  &__description {
     width: 100%;
     text-align: center;
     padding: 40px;
   }
-}
-@media (max-width: 960px) {
-  .destination__title {
-    margin-top: 0;
-  }
-}
-@media (max-width: 960px) {
-  .destination_paragraph--groenlandia {
+  &_paragraph--groenlandia {
     max-width: 100%;
   }
-}
-@media (max-width: 960px) {
-  .destination--groenlandia__wrapper-img,
-  .destination--antartida__wrapper-img {
-    width: 100%;
-  }
-}
-@media (max-width: 960px) {
-  .destination__description--antartida {
+  &__description--antartida {
     text-align: center;
   }
+  }
 }
+
 
 .footer {
   background-color: #161616;

@@ -1,9 +1,8 @@
-@charset "UTF-8";
-/* Variáveis */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 html {
@@ -32,6 +31,7 @@ a:hover {
   width: 960px;
   margin: 0 auto;
 }
+
 @media (max-width: 960px) {
   .container {
     width: 100%;
@@ -40,6 +40,7 @@ a:hover {
 }
 
 .transition {
+  -webkit-transition: all 1s;
   transition: all 1s;
 }
 
@@ -50,22 +51,33 @@ a:hover {
   top: 0;
   z-index: 99;
 }
+
 .nav__menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   height: 85px;
 }
+
 .nav__link {
   color: #fff;
   margin-right: 50px;
 }
+
 .nav__link:hover {
   color: rgba(130, 157, 173, 0.8);
 }
+
 .nav__mobile {
   display: none;
 }
+
 @media (max-width: 420px) {
   .nav {
     background-color: #fff;
@@ -88,40 +100,47 @@ a:hover {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 .banner__title {
   font-size: 105px;
   color: rgba(255, 255, 255, 0.9);
   text-transform: uppercase;
-  font-family: "Varela Round";
+  font-family: 'Varela Round';
   font-weight: 100;
   padding-top: 80px;
   letter-spacing: 8px;
 }
+
 @media (max-width: 850px) {
   .banner__title {
     font-size: 60px;
   }
 }
+
 @media (max-width: 1024px) {
   .banner__title {
     font-size: 80px;
   }
 }
+
 .banner__subtitle {
   color: rgba(255, 255, 255, 0.7);
   font-size: 22px;
   font-weight: 400;
   line-height: 28px;
 }
+
 @media (max-width: 850px) {
   .banner__subtitle {
     font-size: 18px;
   }
 }
+
 .banner__btn {
   display: inline-block;
   margin-top: 40px;
 }
+
 @media (max-width: 420px) {
   .banner {
     height: 400px;
@@ -138,9 +157,11 @@ a:hover {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
 }
+
 .btn--primary {
   background-color: #829dad;
 }
+
 .btn--primary:hover {
   background-color: #36b0e0;
   color: #fff;
@@ -152,6 +173,7 @@ a:hover {
   padding: 40px;
   color: #fff;
 }
+
 .about__title {
   margin-bottom: 20px;
 }
@@ -159,62 +181,93 @@ a:hover {
 .destination {
   padding: 80px 0;
 }
+
 .destination__border {
   width: 30px;
   height: 120px;
   background-color: #829dad;
   display: block;
 }
+
 .destination__text {
   margin-left: 30px;
 }
+
 .destination--siberia {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
+
 .destination--siberia__img {
   max-width: 740px;
   width: 100%;
   height: auto;
   display: block;
 }
+
 .destination--groenlandia, .destination--antartida {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   height: 300px;
 }
+
 .destination--groenlandia__img, .destination--antartida__img {
   max-height: 300px;
   width: 100%;
   height: auto;
   display: block;
 }
+
 .destination--groenlandia__wrapper-img, .destination--antartida__wrapper-img {
   width: 50%;
 }
+
 .destination__description {
   background: #161616;
   height: inherit;
   width: 50%;
 }
+
 .destination__description--groenlandia {
   padding-left: 40px;
 }
+
 .destination__description--antartida {
   padding-right: 40px;
   text-align: right;
 }
+
 .destination__title {
   color: #fff;
   font-size: 24px;
   margin-bottom: 10px;
   margin-top: 80px;
 }
+
+@media (max-width: 960px) {
+  .destination__title {
+    margin-top: 0;
+  }
+}
+
 .destination_paragraph {
   color: rgba(130, 157, 173, 0.5);
 }
+
 .destination_paragraph--groenlandia {
   max-width: 80%;
 }
@@ -223,63 +276,39 @@ a:hover {
   .destination__border {
     display: none;
   }
-}
-@media (max-width: 960px) {
   .destination--siberia {
     display: block;
     text-align: center;
   }
-}
-@media (max-width: 960px) {
   .destination--siberia__img {
     max-width: 100%;
   }
-}
-@media (max-width: 960px) {
-  .destination--groenlandia,
-.destination--antartida {
+  .destination--groenlandia, .destination--antartida {
     height: auto;
     display: block;
   }
-
+  .destination--groenlandia__img, .destination--antartida__img {
+    max-height: 100%;
+  }
+  .destination--groenlandia__wrapper-img, .destination--antartida__wrapper-img {
+    width: 100%;
+  }
   .destination--groenlandia {
     margin-bottom: 40px;
   }
-}
-@media (max-width: 960px) {
-  .destination--groenlandia__img,
-.destination--antartida__img {
-    max-height: 100%;
-  }
-}
-@media (max-width: 960px) {
   .destination__description {
     width: 100%;
     text-align: center;
     padding: 40px;
   }
-}
-@media (max-width: 960px) {
-  .destination__title {
-    margin-top: 0;
-  }
-}
-@media (max-width: 960px) {
   .destination_paragraph--groenlandia {
     max-width: 100%;
   }
-}
-@media (max-width: 960px) {
-  .destination--groenlandia__wrapper-img,
-.destination--antartida__wrapper-img {
-    width: 100%;
-  }
-}
-@media (max-width: 960px) {
   .destination__description--antartida {
     text-align: center;
   }
 }
+
 .footer {
   background-color: #161616;
   margin-top: 80px;
@@ -287,18 +316,26 @@ a:hover {
   padding: 40px;
   color: rgba(255, 255, 255, 0.5);
 }
+
 .footer__socialmedia {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: 40px 0;
 }
+
 .footer__twitter, .footer__facebook, .footer__youtube {
   opacity: 0.5;
   margin: 0 10px;
 }
+
 .footer__twitter:hover, .footer__facebook:hover, .footer__youtube:hover {
   opacity: 1;
 }
-
 /*# sourceMappingURL=style.css.map */
