@@ -71,7 +71,6 @@ Com parametros e valor padrão:<br/>
 ![mixin--com-parametros-com-valor-padrao](imagens-exemplo/mixin--com-parametros-com-valor-padrao.PNG)<br />
 [Para mais exemplos de mixins](http://blog.caelum.com.br/10-mixins-sass-que-voce-deveria-usar-em-seus-projetos/)
 
-
 ## Aula 2
 #### Partials
 Para modularizar nosso código e deixar mais fácil de configurar, conseguimos separar em arquivos chamados partials, que são pedaços de css separados em arquivos e que recebem um _ no começo do nome, para que o sass entenda que não deve gerar o código no css, só quando chamarmos por @import.<br/>
@@ -101,14 +100,13 @@ O resultado gerado no css agora é como queriamos: <br/>
 ![css-resultado-ideal](imagens-exemplo/ideal-css.PNG)<br />
 <br/>
 Apesar de bem útil, o placeholder possui duas limitações:<br/>
- * Não podemos criar placeholders com parâmetros, como fazemos com os mixins.
- * Os placeholders possuem conflitos ao utilizar junto do @media, podendo gerar esse erro: <br/>
- You may not @extend an outer selector from within @media.<br/> 
- You may only @extend selectors within the same directive.<br/>
- <br/>
+  * Não podemos criar placeholders com parâmetros, como fazemos com os mixins.
+  * Os placeholders possuem conflitos ao utilizar junto do @media, podendo gerar esse erro: <br/>
+  You may not @extend an outer selector from within @media.<br/> 
+  You may only @extend selectors within the same directive.<br/>
+  
 [Para mais exemplos de placeholders](https://blog.teamtreehouse.com/extending-placeholder-selectors-with-sass/)
 <br/>
-
 #### Funções de cor do SASS
 O SASS possui algumas funções nativas e algumas dela são as de cores: <br/> 
 http://sass-lang.com/documentation/Sass/Script/Functions.html</br>
