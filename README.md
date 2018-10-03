@@ -5,7 +5,7 @@ Conforme formos aprendendo, as branches de cada aula serão atualizadas com os c
 
 ---
 
-### [Aula 1](#aula-1)
+### [Aula 1](#aula-01)
 #### Resumo:
 Nessa aula pegaremos o execício do Mundo Gelado e analisaremos, tirando qualquer dúvida que ainda sobrou sobre CSS. 
 Após isso começaremos a ver um pouco sobre pré-processadores, utilizando na prática o [SCSS](https://sass-lang.com/), aprendendo da [instalação](#instalação) até alguns conceitos como:
@@ -13,17 +13,17 @@ Após isso começaremos a ver um pouco sobre pré-processadores, utilizando na p
 * [Aninhamento/Nesting](#aninhamento)
 * [Mixins](#mixins)
 
-### [Aula 2](#aula-2)
+### [Aula 2](#aula-02)
 #### Resumo:
 Nessa aula aprendemos sobre:
 * [Partials](#partials)
 * [Imports](#imports)
 * [Placeholders e Extends](#placeholders-e-extends)
-* [Funções de cor do SASS](#funções-de-cor-sass)
+* [Funções de cor do SASS](#funções-de-cor-do-sass)
 
 ---
 
-## Aula 1
+## Aula 01
 Utilizamos o pré-processador [SASS](https://sass-lang.com/) com a sintáxe .scss para poder aproveitar das vantagens desse recurso, mas quais são as vantagens ?
   * Utilizar funcionalidades que o css puro não suporta, como: variáveis, aninhamento, mixins, funções, imports, extends.
   * Evitar duplicação de código
@@ -71,7 +71,7 @@ Com parametros e valor padrão:<br/>
 ![mixin--com-parametros-com-valor-padrao](imagens-exemplo/mixin--com-parametros-com-valor-padrao.PNG)<br />
 [Para mais exemplos de mixins](http://blog.caelum.com.br/10-mixins-sass-que-voce-deveria-usar-em-seus-projetos/)
 
-## Aula 2
+## Aula 02
 #### Partials
 Para modularizar nosso código e deixar mais fácil de configurar, conseguimos separar em arquivos chamados partials, que são pedaços de css separados em arquivos e que recebem um _ no começo do nome, para que o sass entenda que não deve gerar o código no css, só quando chamarmos por @import.<br/>
 Ex: _base.scss <br/>
