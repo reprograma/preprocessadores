@@ -1,4 +1,4 @@
-.destination--siberia__img, .destination--groenlandia__img, .destination--antartida__img {
+.banner, .destination, .destination--siberia__img, .destination--groenlandia__img, .destination--antartida__img {
   height: auto;
   display: block;
 }

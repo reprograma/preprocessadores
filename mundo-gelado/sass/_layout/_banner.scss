@@ -1,4 +1,9 @@
-
+.banner{
+    @extend %height_display;
+}
+.destination{
+    @extend %height_display;
+} 
 .banner {
     background: url("../images/foto-banner.jpg");
     background-size: cover;
