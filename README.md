@@ -106,8 +106,9 @@ Apesar de bem útil, o placeholder possui duas limitações:<br/>
  You may not @extend an outer selector from within @media.<br/> 
  You may only @extend selectors within the same directive.<br/>
  <br/>
- <br/>
-[Para mais exemplos de placeholders](https://blog.teamtreehouse.com/extending-placeholder-selectors-with-sass)
+[Para mais exemplos de placeholders](https://blog.teamtreehouse.com/extending-placeholder-selectors-with-sass/)
+<br/>
+
 #### Funções de cor do SASS
 O SASS possui algumas funções nativas e algumas dela são as de cores: <br/> 
 http://sass-lang.com/documentation/Sass/Script/Functions.html</br>
