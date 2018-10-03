@@ -1,0 +1,75 @@
+/* --- FOOTER --- */
+.rodape {
+    background-color: #323534;
+    color: white;
+    font-size: .9rem;
+    @include flexbox($flex-direction: column, $align-items: center);
+    padding-top: .8rem;
+    &__principal {
+        @include flexbox($flex-direction: column, $align-items: center, $justify-content: space-between);
+        text-align: center;
+        padding: 1.5rem 0;
+        > * {
+            margin: 1rem 0;
+        }
+    }
+    &__navegacao {
+        > li {
+            font-size: 1.1rem;
+            margin: 1rem;
+        }
+        a {
+            transition: all .5s;
+            &:hover {
+                color: $cor-secundaria;
+            }
+        }
+    }
+
+    &__logo {
+        max-width: 200px;
+    }
+
+    &__redes-sociais {
+        a {
+            @include flexbox($align-items: center, $justify-content: center);
+            transition: all .5s;
+            &:hover {
+                color: $cor-secundaria;
+            }
+        }
+        img {
+            max-width: 10px;
+            margin-right: .5rem;
+        }
+        span {
+            @include flexbox;
+            font-size: 1.5rem;
+        }
+    }
+
+    &__cc {
+        width: 100%;
+        background-color: #292A2A;
+        font-size: 1rem;
+        opacity: 0.5;
+        text-align: center;
+    }
+    @media (min-width: 768px) {
+        padding-top: 0;
+        &__principal {
+            @include flexbox(row, center, space-around);
+            width: 100%;
+        }
+
+        &__logo img {
+            max-width: 250px;
+        }
+
+        &__navegacao > li {
+            font-size: 1.5rem;;
+        }
+
+    }
+    
+}

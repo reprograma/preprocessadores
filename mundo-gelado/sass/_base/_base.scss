@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: Nunito;
+    font-size: 16px;
+  }
+  
+  ul, li {
+    list-style: none;
+  }
+  
+  a {
+    text-decoration: none;
+    color: $cor-primaria;
+  }
+  
+  a:hover {
+    color: #3c6360;
+  }
+  
+  .container {
+    width: 960px;
+    margin: 0 auto;
+    @media (max-width: 960px) {
+        width: 100%;
+        padding: 0 4%;
+    }
+  }
+  
+  .transition {
+    transition: all 1s;
+  }
+  
+  
+  
+  
+  
+  
+  

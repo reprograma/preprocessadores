@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: $font-size; /* definir uma font-size padrão */
+}
+
+body {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+/* define que as imagens tem que ter o tamanho máximo da div mãe */
+.img-responsive {
+    width: 100%;
+}
+
+/* define o tamanho da caixa */
+.container {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 960px;
+}

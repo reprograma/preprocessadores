@@ -13,8 +13,15 @@ Após isso começaremos a ver um pouco sobre pré-processadores, utilizando na p
 * [Aninhamento/Nesting](#aninhamento)
 * [Mixins](#mixins)
 
----
+### [Aula 2](#aula-2)
+#### Resumo:
+Nessa aula aprendemos sobre:
+* [Partials](#partials)
+* [Imports](#imports)
+* [Placeholders e Extends](#placeholders-e-extends)
+* [Funções de cor do SASS](#funções-de-cor-sass)
 
+---
 
 ## Aula 1
 Utilizamos o pré-processador [SASS](https://sass-lang.com/) com a sintáxe .scss para poder aproveitar das vantagens desse recurso, mas quais são as vantagens ?
@@ -60,12 +67,50 @@ Sem parametros:<br/>
 ![mixin--sem-parametros](imagens-exemplo/mixin--sem-parametros.PNG)<br />
 Com parametros:<br/>
 ![mixin--com-parametros-sem-valor-padrao](imagens-exemplo/mixin--com-parametros-sem-valor-padrao.PNG)<br />
-**OBS: Quando criamos o mixin sem colocar um valor padrão, sempre que chamarmos é necessário passar os valores, senão dará erro**<br/>
-<br/>
 Com parametros e valor padrão:<br/>
 ![mixin--com-parametros-com-valor-padrao](imagens-exemplo/mixin--com-parametros-com-valor-padrao.PNG)<br />
-**OBS: Quando criamos o mixin com valores padrão nos parâmetros, podemos chamar em qualquer ordem desde que a gente passe a chave junto <br/> Ex:**<br/> <code>@include flexbox($justify-content: center, $align-items: center, $flex-direction: column)</code>
-
 [Para mais exemplos de mixins](http://blog.caelum.com.br/10-mixins-sass-que-voce-deveria-usar-em-seus-projetos/)
+
+## Aula 2
+#### Partials
+Para modularizar nosso código e deixar mais fácil de configurar, conseguimos separar em arquivos chamados partials, que são pedaços de css separados em arquivos e que recebem um _ no começo do nome, para que o sass entenda que não deve gerar o código no css, só quando chamarmos por @import.<br/>
+Ex: _base.scss <br/>
+![exemplo-pasta](imagens-exemplo/sass-partials.PNG)<br />
+
+#### Imports
+Para fazer com que os nossos partials sejam gerados no css é necessário importá-los no arquivo .scss principal. <br/>
+![imports](imagens-exemplo/imports-sass.PNG)<br />
+**OBS: Lembrando que a ordem que a gente chama os @imports é a ordem que será gerado no css**
+
+#### Placeholders e Extends
+Assim como o mixin, os placeholders também são trechos de código que podemos reutilar, mas se ele faz a mesma coisa que o mixin, por que utilizarmos ? <br/>
+Vamos exemplificar, criamos o seguinte mixin:<br/>
+![mixin-height-display](imagens-exemplo/mixin-height-display.PNG)<br />
+Quando aplicamos ele em dois lugares: <br/>
+![chamada-mixin](imagens-exemplo/mixincall-height-display.PNG)<br />
+O css gerado é o seguinte: <br/>
+![css-resultado](imagens-exemplo/banner-destination-css.PNG)<br />
+O ideal seria: <br/>
+![css-resultado-ideal](imagens-exemplo/ideal-css.PNG)<br />
+E é que os Placeholders fazem a partir do extend, para criar um placeholder fazemos o seguinte: <br/>
+![placeholder-height-display](imagens-exemplo/placeholder-height-display.PNG)<br />
+E chamamos assim: <br/>
+![chamada-placeholder](imagens-exemplo/placeholdercall-height-display.PNG)<br />
+O resultado gerado no css agora é como queriamos: <br/>
+![css-resultado-ideal](imagens-exemplo/ideal-css.PNG)<br />
+<br/>
+Apesar de bem útil, o placeholder possui duas limitações:<br/>
+  * Não podemos criar placeholders com parâmetros, como fazemos com os mixins.
+  * Os placeholders possuem conflitos ao utilizar junto do @media, podendo gerar esse erro: <br/>
+  You may not @extend an outer selector from within @media.<br/> 
+  You may only @extend selectors within the same directive.<br/>
+  
+[Para mais exemplos de placeholders](https://blog.teamtreehouse.com/extending-placeholder-selectors-with-sass/)
+<br/>
+#### Funções de cor do SASS
+O SASS possui algumas funções nativas e algumas dela são as de cores: <br/> 
+http://sass-lang.com/documentation/Sass/Script/Functions.html</br>
+Exemplo da função para deixar mais claro: <br/>
+<code>lighten(#829dad, 20%);</code>
 
 

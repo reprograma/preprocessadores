@@ -1,0 +1,14 @@
+@mixin height_display{
+    height: auto;
+    display: block;
+}
+  
+@mixin rgba_opacity($cor: $cor-primaria, $opacidade: 1){
+color: rgba($cor, $opacidade);
+}
+  
+@mixin borda-arredondada($raio: 5px){
+border-radius: $raio;
+-moz-border-radius: $raio; 
+-webkit-border-radius: $raio;
+}

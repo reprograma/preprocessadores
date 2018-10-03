@@ -1,0 +1,53 @@
+
+/* --- SECTION MARAVILHOSAS --- */
+.maravilhosas{
+    &__titulo {
+        font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
+        color: $cor-primaria;
+        font-size: 2rem;
+        text-align: center;
+    }
+    &__box {
+        @include flexbox($justify-content: space-around);
+        flex-wrap: wrap;
+        text-align: center;
+        color: $cor-primaria;
+        @media (min-width: 768px) {
+            & > div {
+                max-width: 200px;
+                margin: 5rem;
+            }
+        
+        }
+    }
+    &__perfil {
+        max-width: 120px;
+        margin: 2rem;
+        img {
+            background-color: #63458a;
+            border-radius: 10px;
+        }
+        a {
+            img {
+                transition: all .5s;
+            }
+            &:hover {
+                text-decoration: underline;
+                img {
+                    box-shadow: 0 3px 10px rgba(0,0,0,.2);
+                }
+            }
+        }
+        @media (min-width: 768px){
+            & p {
+                font-size: 1.5rem;
+                margin-top: 1rem;
+            }
+        }
+    }
+    @media (min-width: 768px) {
+            padding: 4rem 0;
+    }
+
+
+}

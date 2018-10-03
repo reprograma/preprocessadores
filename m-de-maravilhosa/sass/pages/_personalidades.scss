@@ -1,0 +1,134 @@
+
+/** ---- PERSONALIDADE ---- **/
+/* --- HEADER --- */
+.header-personalidade {
+    @include flexbox(row, flex-end, center);
+    background-size: cover;
+    padding: 0 2rem;
+    color: white;
+    min-height: 80vh;
+    height: 500px;
+
+    &__titulo {
+        text-align: center;
+        font-size: 2.6rem;
+        text-transform: uppercase;
+    }
+    @media (min-width: 768px) {
+        padding: 0 20rem;
+        &__titulo {
+            font-size: 3.5rem;
+            text-align: center;
+        }
+    }
+}
+
+/* --- PEFIL DIVA--- */
+.secao-diva {
+    @include flexbox(column, center, center);
+    padding: 5rem 2rem;
+    margin: 0 auto;
+    &__titulo {
+        text-align: center;
+        font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
+        font-size: 2rem;
+        color: $cor-primaria;
+        &_esq {
+            margin-right: auto;
+        }
+    }
+    p {
+        color: #63458a;
+        font-size: 1.6rem;
+        line-height: 1.5;
+    }
+    &__introducao {
+        @include flexbox(column, center);
+
+    }
+    &__foto-perfil {
+        max-width: 18rem;
+        margin: 1rem;
+        background-color: #63458a;
+    }
+    &__citacao p {
+        font-weight: bold;
+        border: 1px solid #63458a;
+        text-align: center;
+        padding: 1rem;
+        font-size: 1.7rem;
+    }
+    &__historia {
+        @include flexbox(column, center);
+        flex-direction: column;
+        align-items: center;
+        padding: 5rem 0;
+    }
+
+    @media (min-width: 1024px) {    
+        &__introducao {
+            flex-direction: row;
+            margin: 3rem 0;
+        }
+        &__foto-perfil {
+            max-width: 100%;
+            margin: 0 4rem;
+        }
+        & p {
+            font-size: 1.7rem;
+        }
+        &__citacao p {
+            font-size: 2.5rem;
+            padding: 4rem;
+        }
+    }
+}
+
+/* --- AUTORA --- */
+.secao-autora {
+    background-color: #e4b7e5;
+    @include flexbox($justify-content: center);
+     & > div {
+        text-align: center;
+        @include flexbox(column, center, space-around);
+        padding: 2rem 0;
+        @media (min-width: 1024px) {
+          
+                @include flexbox($flex-direction:row, $justify-content: center, $align-items: center);
+                text-align: left;
+                padding: 0;
+          
+        }
+    }
+
+    &__foto {
+        max-width: 150px;
+    }
+    &__dados {
+        color: #63458a;
+        font-size: 1.6rem;
+        line-height: 1.5;
+        margin-top: 1rem;
+        & p {
+            margin: 0;
+        }
+    }
+
+    a {
+        font-style: italic;
+        text-decoration: underline;
+    }
+    
+    @media (min-width: 1024px) {
+  
+        &__dados {
+            margin: 0 3rem;
+        }
+    }
+    
+}
+.secao-cta {
+    text-align: center;
+    padding: 4rem 0;
+}
+
