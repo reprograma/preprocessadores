@@ -9,17 +9,19 @@
   }
   
   body {
-    font-family: Nunito;
-    font-size: 16px;
+    font-family: fonte(principal);
+    font-size: $font-size;
+
   }
   
   ul, li {
     list-style: none;
   }
   
+  //$nome-da-cor-que-eu-quero = primaria
   a {
     text-decoration: none;
-    color: $cor-primaria;
+    color: cor(primaria);
   }
   
   a:hover {
@@ -39,7 +41,53 @@
     transition: all 1s;
   }
   
-  
+//Exemplo de IF
+.classe-teste{
+  @if 3 > 4{
+    width: 10px;
+  }@else if 5 > 2{
+    width: 50px;
+  }@else{
+    width: 100px;
+  }
+  //width : if(condicao, valor se verdade, valor se falso);
+  height: if(3 > 4, 10px, 50px);
+}  
+
+@for $i from 1 through 5{
+  $width: percentage($i/5);
+  .col-for-#{$i} { 
+    width: $width; 
+  } 
+}
+
+$i: 1;
+$cols: 5;
+
+@while $i <= $cols{
+  $width: percentage($i/$cols);
+  .col-while-#{$i}{
+    width: $width;
+  }
+  $i: $i + 1;
+}
+
+
+@each $nome-da-cor, $cor in $cores{
+  .#{$nome-da-cor}{
+    color: $cor;
+  }
+}
+
+@each $chave, $valor in $fontes{
+  .#{$chave}{
+    font-family: $valor;
+  }
+}
+
+
+
+
   
   
   

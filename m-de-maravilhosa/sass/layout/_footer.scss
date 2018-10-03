@@ -55,7 +55,7 @@
         opacity: 0.5;
         text-align: center;
     }
-    @media (min-width: 768px) {
+    @include responsivo(tab-port){
         padding-top: 0;
         &__principal {
             @include flexbox(row, center, space-around);

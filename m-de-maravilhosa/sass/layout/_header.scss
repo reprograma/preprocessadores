@@ -13,12 +13,12 @@
     text-align: center;
     padding: 11rem 2rem 5rem 2rem;
     color: white;
-    @media (min-width: 768px) {
+    @include responsivo(tab-port){
             min-height: 75vh;
             text-align: left;
             padding: 5rem 10rem;
     }
-    @media (min-width: 1440px) {
+    @include responsivo(desktop){
         min-height: 90vh;
     }
 }
@@ -28,7 +28,7 @@
         text-transform: uppercase;
         font-size: 2.5rem;
         font-weight: 900;
-        @media (min-width: 768px) {
+        @include responsivo(tab-port){
             font-size: 2.9rem;
             
             &__sub {
@@ -39,7 +39,7 @@
                 margin: 0;
             }
         }
-        @media (min-width: 1024px) {
+        @include responsivo(tab-land){
             max-width: 650px;
         }
 
@@ -49,7 +49,7 @@
         margin: 2rem 0 3rem 0;
         font-size: 1.5rem;
     }
-    @media (min-width: 768px) {
+    @include responsivo(tab-port){
         
         &__titulo {
             font-size: 2.9rem;
@@ -64,7 +64,7 @@
         }
     }
 
-    @media (min-width: 1440px) {
+    @include responsivo(desktop){
             max-width: 650px;
     }
 }

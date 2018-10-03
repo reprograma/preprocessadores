@@ -56,7 +56,7 @@
         margin: 0 1rem;
     }
 
-    @media (min-width: 768px){
+    @include responsivo(tab-port){
         &__itens {
             position: static;
             @include flexbox;
@@ -82,7 +82,7 @@
 
     }
 
-    @media (min-width: 1440px) {
+    @include responsivo(desktop){
         &__box {
             max-width: 80%;
         }
