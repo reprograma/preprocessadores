@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AACA,aAAa",
+    "sources": [
+        "../sass/media_query.scss"
+    ],
+    "names": [],
+    "file": "media_query.css"
+}

@@ -1,0 +1,94 @@
+/* --- NAV --- */
+.navegacao {
+    background-color: $cor-primaria;
+    color: white;
+    text-transform: uppercase;
+    box-shadow: 0px 5px 5px rgba(0,0,0,.2);
+    padding: 1.5rem;
+    z-index: 99;
+    position: fixed;
+    width: 100%;
+    &__logo {
+        max-width: 200px;
+    }
+    &__box {
+       @include flexbox( $align-items: center, $justify-content: space-between);
+    }
+    &__itens {
+        position: absolute;
+        right: -700px;
+        top: 85px;
+        width: 100%;
+        background-color: $cor-primaria;
+        text-align: center;
+        padding: 3rem 0;
+        transition: right 1s;
+        &.ativo {
+            display: block;
+            right: 0;
+            top: 85px;
+            width: 100%;
+            background-color: $cor-primaria;
+            text-align: center;
+            padding: 3rem 0;
+            transition: right 1s;
+        }
+        li > a {
+            transition: all .2s;
+            &:hover {
+                color: $cor-secundaria;
+            }
+        }
+    }
+    &__menu-hamburguer img {
+        background-color: $cor-secundaria;
+        border-radius: 5px;
+    }
+    &__nav {
+        margin-bottom: 3rem;
+        margin-right: 2rem;
+        li {
+            font-size: 1.5rem;
+            margin: 1rem;
+        }
+    }
+    &__redes-sociais a {
+        margin: 0 1rem;
+    }
+
+    @media (min-width: 768px){
+        &__itens {
+            position: static;
+            @include flexbox;
+            padding: 0;
+            width: auto;
+            & ul {
+                @include flexbox($align-items: center, $justify-content: space-around);
+                width: 100%;
+                text-align: center;
+            }
+            & li {
+                font-size: 1.2rem;
+                margin: 0 .6rem;
+            }
+        }
+        &__nav {
+            margin-bottom: 0;
+        }
+
+        &__menu-hamburguer {
+            display: none;
+        }
+
+    }
+
+    @media (min-width: 1440px) {
+        &__box {
+            max-width: 80%;
+        }
+        &__itens li {
+            font-size: 1.5rem;
+            margin: 0 1rem;
+        }
+    }
+}

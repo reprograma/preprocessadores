@@ -1,0 +1,34 @@
+
+/* --- BOTAO --- */
+
+.btn {
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 1rem 3rem;
+    border-radius: 5px;
+    font-size: 1.8rem;
+    &_roxo {
+        color: white;
+        background-color: $cor-secundaria;
+        display: block;
+        max-width: 250px;
+        text-align: center;
+        transition: all .5s;
+        margin: 0 auto;
+        &:hover,
+        &:focus {
+            transform: translateY(-1rem);
+            box-shadow: 0 10px 10px rgba(0,0,0,.2);
+            background-color: rgb(192, 156, 188);
+        }
+        &:active {
+            transform: translateY(-.5rem);
+            box-shadow: 0 5px 5px rgba(0,0,0,.2);
+        }
+        
+        
+    }
+    &_center {
+        margin: 0 auto;
+    }
+}

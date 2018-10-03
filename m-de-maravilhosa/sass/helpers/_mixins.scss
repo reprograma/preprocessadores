@@ -1,0 +1,14 @@
+// Mixin com parametros 
+@mixin flexbox($flex-direction: initial, $align-items: initial, $justify-content: initial){
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: $flex-direction;
+    -webkit-align-items: $align-items;
+    align-items: $align-items;
+    -webkit-justify-content: $justify-content;
+    justify-content: $justify-content;
+    
+}
