@@ -60,7 +60,12 @@ Sem parametros:<br/>
 ![mixin--sem-parametros](imagens-exemplo/mixin--sem-parametros.PNG)<br />
 Com parametros:<br/>
 ![mixin--com-parametros-sem-valor-padrao](imagens-exemplo/mixin--com-parametros-sem-valor-padrao.PNG)<br />
+**OBS: Quando criamos o mixin sem colocar um valor padrão, sempre que chamarmos é necessário passar os valores, senão dará erro**<br/>
+<br/>
 Com parametros e valor padrão:<br/>
 ![mixin--com-parametros-com-valor-padrao](imagens-exemplo/mixin--com-parametros-com-valor-padrao.PNG)<br />
+**OBS: Quando criamos o mixin com valores padrão nos parâmetros, podemos chamar em qualquer ordem desde que a gente passe a chave junto <br/> Ex:**<br/> <code>@include flexbox($justify-content: center, $align-items: center, $flex-direction: column)</code>
+
 [Para mais exemplos de mixins](http://blog.caelum.com.br/10-mixins-sass-que-voce-deveria-usar-em-seus-projetos/)
+
 
