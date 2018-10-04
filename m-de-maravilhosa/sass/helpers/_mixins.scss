@@ -12,3 +12,20 @@
     justify-content: $justify-content;
     
 }
+
+
+@mixin responsivo($tipo){
+    @if $tipo == tab-port {
+        @media (min-width: 768px) {
+            @content;
+        }
+    }@else if $tipo == tab-land {
+        @media (min-width: 1024px) {
+            @content;
+        }
+    }@else if $tipo == desktop {
+        @media (min-width: 1440px) {
+            @content;
+        }
+    }
+}

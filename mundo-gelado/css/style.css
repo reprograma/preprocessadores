@@ -27,7 +27,7 @@ html {
 }
 
 body {
-  font-family: Nunito;
+  font-family: "Nunito";
   font-size: 16px;
 }
 
@@ -59,6 +59,75 @@ a:hover {
 .transition {
   -webkit-transition: all 1s;
   transition: all 1s;
+}
+
+.classe-teste {
+  width: 50px;
+  height: 50px;
+}
+
+.col-for-1 {
+  width: 20%;
+}
+
+.col-for-2 {
+  width: 40%;
+}
+
+.col-for-3 {
+  width: 60%;
+}
+
+.col-for-4 {
+  width: 80%;
+}
+
+.col-for-5 {
+  width: 100%;
+}
+
+.col-while-1 {
+  width: 20%;
+}
+
+.col-while-2 {
+  width: 40%;
+}
+
+.col-while-3 {
+  width: 60%;
+}
+
+.col-while-4 {
+  width: 80%;
+}
+
+.col-while-5 {
+  width: 100%;
+}
+
+.primaria {
+  color: #829dad;
+}
+
+.auxiliar {
+  color: #000;
+}
+
+.branco {
+  color: #FFF;
+}
+
+.principal {
+  font-family: "Nunito";
+}
+
+.auxiliar {
+  font-family: "Arial, sans serif";
+}
+
+.base {
+  font-family: "Montserrat";
 }
 
 .btn {
@@ -145,6 +214,13 @@ a:hover {
   font-weight: 100;
   padding-top: 80px;
   letter-spacing: 8px;
+}
+
+@media only screen and (max-width: 900px) {
+  .banner__title {
+    font-size: 60px;
+    width: 100%;
+  }
 }
 
 @media (max-width: 850px) {

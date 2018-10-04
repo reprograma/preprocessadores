@@ -14,7 +14,7 @@
         font-size: 2.6rem;
         text-transform: uppercase;
     }
-    @media (min-width: 768px) {
+    @include responsivo(tab-port) {
         padding: 0 20rem;
         &__titulo {
             font-size: 3.5rem;
@@ -65,7 +65,7 @@
         padding: 5rem 0;
     }
 
-    @media (min-width: 1024px) {    
+    @include responsivo(tab-land) {    
         &__introducao {
             flex-direction: row;
             margin: 3rem 0;
@@ -92,7 +92,7 @@
         text-align: center;
         @include flexbox(column, center, space-around);
         padding: 2rem 0;
-        @media (min-width: 1024px) {
+        @include responsivo(tab-land) {
           
                 @include flexbox($flex-direction:row, $justify-content: center, $align-items: center);
                 text-align: left;
@@ -119,7 +119,7 @@
         text-decoration: underline;
     }
     
-    @media (min-width: 1024px) {
+    @include responsivo(tab-land) {
   
         &__dados {
             margin: 0 3rem;

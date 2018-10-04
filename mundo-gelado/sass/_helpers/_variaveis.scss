@@ -1,3 +1,23 @@
 // Variáveis
 $cor-primaria: lighten(#829dad, 0%);
 $cor-branca: #fff;
+//Map
+
+$fontes:(
+    principal: 'Nunito',
+    auxiliar: 'Arial, sans serif',
+    base: 'Montserrat'
+);
+
+$cores:(
+    primaria: lighten(#829dad, 0%),
+    auxiliar: #000,
+    branco: #FFF
+);
+
+
+//$map:(
+//   chave: valor
+//);
+
+$font-size: 16px;

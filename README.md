@@ -21,6 +21,14 @@ Nessa aula aprendemos sobre:
 * [Placeholders e Extends](#placeholders-e-extends)
 * [Funções de cor do SASS](#funções-de-cor-do-sass)
 
+### [Aula 3](#aula-03)
+#### Resumo:
+Finalização dos conteúdos de SASS:
+* [Operações matemáticas](#operações-matemáticas)
+* [Funções](#funções)
+* [Condicional](#condicional)
+* [Loops](#loops)
+
 ---
 
 ## Aula 01
@@ -112,5 +120,101 @@ O SASS possui algumas funções nativas e algumas dela são as de cores: <br/>
 http://sass-lang.com/documentation/Sass/Script/Functions.html</br>
 Exemplo da função para deixar mais claro: <br/>
 <code>lighten(#829dad, 20%);</code>
+
+
+## Aula 03
+#### Operações matemáticas
+Com o SASS podemos utilizar operadores matemáticos: +, - , *, / e %.<br/>
+Ex no .scss: <br/>
+![SASS exemplo de operadores matemáticos](imagens-exemplo/sass-operador.PNG)<br/>
+Resultado no .css: <br/>
+![Resultado no CSS dos operadores matemáticos do SASS](imagens-exemplo/css-operador.PNG)<br/>
+
+#### Funções
+Funções, diferente dos mixins, retornam valores, e não trechos de código. <br/>
+Vamos ver a diferença:<br/>
+![imports](imagens-exemplo/mixin-adapta.PNG)<br />
+Esse mixin quando chamado: <br/>
+.scss:<br/>
+<code>
+@include adapta-tamanho(2);
+</code><br/>
+.css:<br/>
+<code>
+height: 32px;
+</code><br/>
+Mas caso quiséssemos usar em outra propriedade que não o height teríamos que criar outro mixin, então uma opção é criar uma função:<br/>
+![imports](imagens-exemplo/funcao-adapta.PNG)<br />
+Quando chamamos a função: <br/>
+.scss:<br/>
+<code>
+margin-top: adapta-tamanho(2);
+</code><br/>
+.css<br/>
+<code>
+margin-top: 32px;
+</code>
+**OBS: Podemos chamar a função de dentro de mixins e placeholders também**
+
+#### Condicional
+Conseguimos usar o if de dentro dos arquivos .scss: <br/>
+![Construção de if de dentro do .scss](imagens-exemplo/if.PNG)<br/>
+<br/>
+.css:<br/>
+![Resultado do .css](imagens-exemplo/if-css.PNG)<br/>
+O @if consegue gerar bloco de código, o if() retorna somente valor.<br/>
+Estrutura do @if:<br/>
+ @if (condicao 1) { <br/>//Código<br/>
+ } @else if (codicao 2) {<br/>//Código<br/>}@else{<br/>//Código<br/>}
+<br/>
+Estrutura do if():<br/>
+if(condicao, valor se verdade, valor se falso);
+
+#### Loops
+Vimos 3 tipos de loops: 
+  * for
+  * while
+  * each
+##### For:
+  A estrutura do `for` é: <br/>
+  @for $i from {numero inicial} through {numero final}{<br/>
+    //Código<br/>
+  }<br/>Ex:<br/>
+  .scss:<br/>
+  ![Resultado do for no scss](imagens-exemplo/for-scss.PNG)<br/>
+  .css:<br/>
+  ![Resultado do for no css](imagens-exemplo/for-css.PNG)<br/>
+
+##### While: 
+  A estrutura do `while` é: <br/>
+  condicao = true<br/>
+  @while {condicao}{<br/>
+    //Codigo<br/>
+    {condicao} = false;<br/>
+  }<br/>
+  .scss: <br/>
+    ![Resultado do for no scss](imagens-exemplo/while-scss.PNG)<br/>
+  .css:<br/>
+    ![Resultado do for no css](imagens-exemplo/while-css.PNG)<br/>
+
+##### Each:
+  Nesse loop a gente consegue passar informações de um data-type `map`:<br/>
+  A estrutura do map:<br/>
+  @variavel: (<br/>
+    'chave1': {valor1},<br/>
+    'chave2': {valor1},<br/>
+  )<br/>
+  A estrutura do each:<br/>
+  @each {chave}, {valor} in `map`{<br/>
+    //codigo<br/>
+  }<br/>
+  Ex:<br/>
+  Usaremos essa variável como base:<br/>
+    ![Variável map de cores](imagens-exemplo/map-cores.PNG)<br/>
+  .scss:<br/>
+    ![EACH código scss](imagens-exemplo/each-scss.PNG)<br/>
+  .css:<br/>
+    ![EACH código css](imagens-exemplo/each-css.PNG)<br/>
+  
 
 

@@ -7,9 +7,9 @@
 .banner {
     background: url("../images/foto-banner.jpg");
     background-size: cover;
-    margin-top: 85px;
+    margin-top: adapta-tamanho(85px/$font-size);
     text-align: center;
-    height: 500px;
+    @include adapta-tamanho(31.25);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -21,6 +21,10 @@
       font-weight: 100;
       padding-top: 80px;
       letter-spacing: 8px;
+      @include responsivo(tab-port){
+        font-size: 60px;
+        width: 100%;
+      }
       @media (max-width: 850px) { 
           font-size: 60px;
       }
