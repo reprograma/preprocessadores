@@ -1,0 +1,38 @@
+@mixin height_display{
+    height: auto;
+    display: block;
+}
+  
+@mixin rgba_opacity($cor: $cor-primaria, $opacidade: 1){
+color: rgba($cor, $opacidade);
+}
+  
+@mixin borda-arredondada($raio: 5px){
+border-radius: $raio;
+-moz-border-radius: $raio; 
+-webkit-border-radius: $raio;
+}
+
+@mixin adapta-tamanho($multiplicador){
+    height: adapta-tamanho($multiplicador);
+}
+
+@mixin responsivo($tipo){
+    @if $tipo == phone {
+      @media only screen and (max-width:600px) {
+          @content;
+      }
+    }@else if $tipo == tab-port {
+        @media only screen and (max-width: 900px){
+            @content;
+        }
+    }@else if $tipo == tab-land {
+        @media only screen and (max-width: 1200px){
+            @content; 
+        }
+    }@else if $tipo == big-desktop{
+        @media only screen and (min-width:1800px){
+            @content;
+        }
+    }
+}

@@ -1,0 +1,35 @@
+.nav {
+    background: $cor-primaria;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 99;
+    &__menu {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      height: 85px;
+    }
+    &__link {
+      color: $cor-branca;
+      margin-right: 50px;
+      &:hover {
+        @include rgba_opacity($opacidade:.8);
+      }
+    }
+    &__mobile {
+      display: none;
+    }
+  
+    @media (max-width: 420px) {
+        background-color: $cor-branca;
+        &__link {
+          display: none;
+        }
+        &__mobile {
+          display: block;
+        }
+    }
+  }
+  
+  

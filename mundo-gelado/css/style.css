@@ -1,0 +1,409 @@
+.banner, .destination, .destination--siberia__img, .destination--groenlandia__img, .destination--antartida__img {
+  height: auto;
+  display: block;
+}
+
+.destination--siberia, .destination--groenlandia, .destination--antartida {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Nunito";
+  font-size: 16px;
+}
+
+ul, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #829dad;
+}
+
+a:hover {
+  color: #3c6360;
+}
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+}
+
+@media (max-width: 960px) {
+  .container {
+    width: 100%;
+    padding: 0 4%;
+  }
+}
+
+.transition {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.classe-teste {
+  width: 50px;
+  height: 50px;
+}
+
+.col-for-1 {
+  width: 20%;
+}
+
+.col-for-2 {
+  width: 40%;
+}
+
+.col-for-3 {
+  width: 60%;
+}
+
+.col-for-4 {
+  width: 80%;
+}
+
+.col-for-5 {
+  width: 100%;
+}
+
+.col-while-1 {
+  width: 20%;
+}
+
+.col-while-2 {
+  width: 40%;
+}
+
+.col-while-3 {
+  width: 60%;
+}
+
+.col-while-4 {
+  width: 80%;
+}
+
+.col-while-5 {
+  width: 100%;
+}
+
+.primaria {
+  color: #829dad;
+}
+
+.auxiliar {
+  color: #000;
+}
+
+.branco {
+  color: #FFF;
+}
+
+.principal {
+  font-family: "Nunito";
+}
+
+.auxiliar {
+  font-family: "Arial, sans serif";
+}
+
+.base {
+  font-family: "Montserrat";
+}
+
+.btn {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 14px;
+  padding: 15px 30px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+.btn--primary {
+  background-color: #829dad;
+}
+
+.btn--primary:hover {
+  background-color: #36b0e0;
+  color: #fff;
+}
+
+.nav {
+  background: #829dad;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 99;
+}
+
+.nav__menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  height: 85px;
+}
+
+.nav__link {
+  color: #fff;
+  margin-right: 50px;
+}
+
+.nav__link:hover {
+  color: rgba(130, 157, 173, 0.8);
+}
+
+.nav__mobile {
+  display: none;
+}
+
+@media (max-width: 420px) {
+  .nav {
+    background-color: #fff;
+  }
+  .nav__link {
+    display: none;
+  }
+  .nav__mobile {
+    display: block;
+  }
+}
+
+.banner {
+  background: url("../images/foto-banner.jpg");
+  background-size: cover;
+  margin-top: 85px;
+  text-align: center;
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.banner__title {
+  font-size: 105px;
+  color: rgba(255, 255, 255, 0.9);
+  text-transform: uppercase;
+  font-family: 'Varela Round';
+  font-weight: 100;
+  padding-top: 80px;
+  letter-spacing: 8px;
+}
+
+@media only screen and (max-width: 900px) {
+  .banner__title {
+    font-size: 60px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 850px) {
+  .banner__title {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .banner__title {
+    font-size: 80px;
+  }
+}
+
+.banner__subtitle {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+@media (max-width: 850px) {
+  .banner__subtitle {
+    font-size: 18px;
+  }
+}
+
+.banner__btn {
+  display: inline-block;
+  margin-top: 40px;
+}
+
+@media (max-width: 420px) {
+  .banner {
+    height: 400px;
+    background-position: -360px 0;
+  }
+}
+
+.about {
+  background-color: rgba(22, 22, 22, 0.8);
+  text-align: center;
+  padding: 40px;
+  color: #fff;
+}
+
+.about__title {
+  margin-bottom: 20px;
+}
+
+.destination {
+  padding: 80px 0;
+}
+
+.destination__border {
+  width: 30px;
+  height: 120px;
+  background-color: #829dad;
+  display: block;
+}
+
+.destination__text {
+  margin-left: 30px;
+}
+
+.destination--siberia__img {
+  max-width: 740px;
+  width: 100%;
+}
+
+.destination--groenlandia, .destination--antartida {
+  height: 300px;
+}
+
+.destination--groenlandia__img, .destination--antartida__img {
+  max-height: 300px;
+  width: 100%;
+}
+
+.destination--groenlandia__wrapper-img, .destination--antartida__wrapper-img {
+  width: 50%;
+}
+
+.destination__description {
+  background: #161616;
+  height: inherit;
+  width: 50%;
+}
+
+.destination__description--groenlandia {
+  padding-left: 40px;
+}
+
+.destination__description--antartida {
+  padding-right: 40px;
+  text-align: right;
+}
+
+.destination__title {
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 10px;
+  margin-top: 80px;
+}
+
+@media (max-width: 960px) {
+  .destination__title {
+    margin-top: 0;
+  }
+}
+
+.destination_paragraph {
+  color: rgba(130, 157, 173, 0.5);
+}
+
+.destination_paragraph--groenlandia {
+  max-width: 80%;
+}
+
+@media (max-width: 960px) {
+  .destination__border {
+    display: none;
+  }
+  .destination--siberia {
+    display: block;
+    text-align: center;
+  }
+  .destination--siberia__img {
+    max-width: 100%;
+  }
+  .destination--groenlandia, .destination--antartida {
+    height: auto;
+    display: block;
+  }
+  .destination--groenlandia__img, .destination--antartida__img {
+    max-height: 100%;
+  }
+  .destination--groenlandia__wrapper-img, .destination--antartida__wrapper-img {
+    width: 100%;
+  }
+  .destination--groenlandia {
+    margin-bottom: 40px;
+  }
+  .destination__description {
+    width: 100%;
+    text-align: center;
+    padding: 40px;
+  }
+  .destination_paragraph--groenlandia {
+    max-width: 100%;
+  }
+  .destination__description--antartida {
+    text-align: center;
+  }
+}
+
+.footer {
+  background-color: #161616;
+  margin-top: 80px;
+  text-align: center;
+  padding: 40px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.footer__socialmedia {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 40px 0;
+}
+
+.footer__twitter, .footer__facebook, .footer__youtube {
+  opacity: 0.5;
+  margin: 0 10px;
+}
+
+.footer__twitter:hover, .footer__facebook:hover, .footer__youtube:hover {
+  opacity: 1;
+}
+/*# sourceMappingURL=style.css.map */

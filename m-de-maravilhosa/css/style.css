@@ -1,0 +1,753 @@
+@charset "UTF-8";
+/* --- BOTAO --- */
+.btn {
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 1rem 3rem;
+  border-radius: 5px;
+  font-size: 1.8rem;
+}
+
+.btn_roxo {
+  color: white;
+  background-color: #C083B9;
+  display: block;
+  max-width: 250px;
+  text-align: center;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  margin: 0 auto;
+}
+
+.btn_roxo:hover, .btn_roxo:focus {
+  -webkit-transform: translateY(-1rem);
+          transform: translateY(-1rem);
+  -webkit-box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  background-color: #c09cbc;
+}
+
+.btn_roxo:active {
+  -webkit-transform: translateY(-0.5rem);
+          transform: translateY(-0.5rem);
+  -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn_center {
+  margin: 0 auto;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  /* definir uma font-size padrão */
+}
+
+body {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+/* define que as imagens tem que ter o tamanho máximo da div mãe */
+.img-responsive {
+  width: 100%;
+}
+
+/* define o tamanho da caixa */
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 960px;
+}
+
+/* --- NAV --- */
+.navegacao {
+  background-color: #674582;
+  color: white;
+  text-transform: uppercase;
+  -webkit-box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+  z-index: 99;
+  position: fixed;
+  width: 100%;
+}
+
+.navegacao__logo {
+  max-width: 200px;
+}
+
+.navegacao__box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: initial;
+  -webkit-box-direction: initial;
+      -ms-flex-direction: initial;
+          flex-direction: initial;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.navegacao__itens {
+  position: absolute;
+  right: -700px;
+  top: 85px;
+  width: 100%;
+  background-color: #674582;
+  text-align: center;
+  padding: 3rem 0;
+  -webkit-transition: right 1s;
+  transition: right 1s;
+}
+
+.navegacao__itens.ativo {
+  display: block;
+  right: 0;
+  top: 85px;
+  width: 100%;
+  background-color: #674582;
+  text-align: center;
+  padding: 3rem 0;
+  -webkit-transition: right 1s;
+  transition: right 1s;
+}
+
+.navegacao__itens li > a {
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.navegacao__itens li > a:hover {
+  color: #C083B9;
+}
+
+.navegacao__menu-hamburguer img {
+  background-color: #C083B9;
+  border-radius: 5px;
+}
+
+.navegacao__nav {
+  margin-bottom: 3rem;
+  margin-right: 2rem;
+}
+
+.navegacao__nav li {
+  font-size: 1.5rem;
+  margin: 1rem;
+}
+
+.navegacao__redes-sociais a {
+  margin: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .navegacao__itens {
+    position: static;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: initial;
+    -webkit-box-direction: initial;
+        -ms-flex-direction: initial;
+            flex-direction: initial;
+    -webkit-box-align: initial;
+        -ms-flex-align: initial;
+            align-items: initial;
+    -webkit-box-pack: initial;
+        -ms-flex-pack: initial;
+            justify-content: initial;
+    padding: 0;
+    width: auto;
+  }
+  .navegacao__itens ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: initial;
+    -webkit-box-direction: initial;
+        -ms-flex-direction: initial;
+            flex-direction: initial;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    width: 100%;
+    text-align: center;
+  }
+  .navegacao__itens li {
+    font-size: 1.2rem;
+    margin: 0 .6rem;
+  }
+  .navegacao__nav {
+    margin-bottom: 0;
+  }
+  .navegacao__menu-hamburguer {
+    display: none;
+  }
+}
+
+@media (min-width: 1440px) {
+  .navegacao__box {
+    max-width: 80%;
+  }
+  .navegacao__itens li {
+    font-size: 1.5rem;
+    margin: 0 1rem;
+  }
+}
+
+/* --- HEADER --- */
+.header {
+  min-height: 80vh;
+  height: 500px;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 0, 255, 0.2)), to(rgba(255, 0, 255, 0.2))), url(../img/turma6.jpeg);
+  background: linear-gradient(rgba(255, 0, 255, 0.2), rgba(255, 0, 255, 0.2)), url(../img/turma6.jpeg);
+  background-size: cover;
+  background-position: center 14%;
+  background-repeat: no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: initial;
+  -webkit-box-direction: initial;
+      -ms-flex-direction: initial;
+          flex-direction: initial;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: initial;
+      -ms-flex-pack: initial;
+          justify-content: initial;
+  text-align: center;
+  padding: 11rem 2rem 5rem 2rem;
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .header {
+    min-height: 75vh;
+    text-align: left;
+    padding: 5rem 10rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .header {
+    min-height: 90vh;
+  }
+}
+
+.principal__titulo {
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+
+@media (min-width: 768px) {
+  .principal__titulo {
+    font-size: 2.9rem;
+  }
+  .principal__titulo__sub {
+    font-size: 1.8rem;
+  }
+  .principal__titulo__btn {
+    margin: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .principal__titulo {
+    max-width: 650px;
+  }
+}
+
+.principal__sub {
+  font-weight: 300;
+  margin: 2rem 0 3rem 0;
+  font-size: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .principal__titulo {
+    font-size: 2.9rem;
+  }
+  .principal__sub {
+    font-size: 1.8rem;
+  }
+  .principal__btn {
+    margin: 0;
+  }
+}
+
+@media (min-width: 1440px) {
+  .principal {
+    max-width: 650px;
+  }
+}
+
+/* --- SECTION MARAVILHOSAS --- */
+.maravilhosas__titulo {
+  font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
+  color: #674582;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.maravilhosas__box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: initial;
+  -webkit-box-direction: initial;
+      -ms-flex-direction: initial;
+          flex-direction: initial;
+  -webkit-box-align: initial;
+      -ms-flex-align: initial;
+          align-items: initial;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  text-align: center;
+  color: #674582;
+}
+
+@media (min-width: 768px) {
+  .maravilhosas__box > div {
+    max-width: 200px;
+    margin: 5rem;
+  }
+}
+
+.maravilhosas__perfil {
+  max-width: 120px;
+  margin: 2rem;
+}
+
+.maravilhosas__perfil img {
+  background-color: #63458a;
+  border-radius: 10px;
+}
+
+.maravilhosas__perfil a img {
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.maravilhosas__perfil a:hover {
+  text-decoration: underline;
+}
+
+.maravilhosas__perfil a:hover img {
+  -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 768px) {
+  .maravilhosas__perfil p {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .maravilhosas {
+    padding: 4rem 0;
+  }
+}
+
+/** ---- PERSONALIDADE ---- **/
+/* --- HEADER --- */
+.header-personalidade {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-size: cover;
+  padding: 0 2rem;
+  color: white;
+  min-height: 80vh;
+  height: 500px;
+}
+
+.header-personalidade__titulo {
+  text-align: center;
+  font-size: 2.6rem;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .header-personalidade {
+    padding: 0 20rem;
+  }
+  .header-personalidade__titulo {
+    font-size: 3.5rem;
+    text-align: center;
+  }
+}
+
+/* --- PEFIL DIVA--- */
+.secao-diva {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 5rem 2rem;
+  margin: 0 auto;
+}
+
+.secao-diva__titulo {
+  text-align: center;
+  font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+  color: #674582;
+}
+
+.secao-diva__titulo_esq {
+  margin-right: auto;
+}
+
+.secao-diva p {
+  color: #63458a;
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+.secao-diva__introducao {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: initial;
+      -ms-flex-pack: initial;
+          justify-content: initial;
+}
+
+.secao-diva__foto-perfil {
+  max-width: 18rem;
+  margin: 1rem;
+  background-color: #63458a;
+}
+
+.secao-diva__citacao p {
+  font-weight: bold;
+  border: 1px solid #63458a;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.7rem;
+}
+
+.secao-diva__historia {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: initial;
+      -ms-flex-pack: initial;
+          justify-content: initial;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem 0;
+}
+
+@media (min-width: 1024px) {
+  .secao-diva__introducao {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin: 3rem 0;
+  }
+  .secao-diva__foto-perfil {
+    max-width: 100%;
+    margin: 0 4rem;
+  }
+  .secao-diva p {
+    font-size: 1.7rem;
+  }
+  .secao-diva__citacao p {
+    font-size: 2.5rem;
+    padding: 4rem;
+  }
+}
+
+/* --- AUTORA --- */
+.secao-autora {
+  background-color: #e4b7e5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: initial;
+  -webkit-box-direction: initial;
+      -ms-flex-direction: initial;
+          flex-direction: initial;
+  -webkit-box-align: initial;
+      -ms-flex-align: initial;
+          align-items: initial;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.secao-autora > div {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 2rem 0;
+}
+
+@media (min-width: 1024px) {
+  .secao-autora > div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: left;
+    padding: 0;
+  }
+}
+
+.secao-autora__foto {
+  max-width: 150px;
+}
+
+.secao-autora__dados {
+  color: #63458a;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  margin-top: 1rem;
+}
+
+.secao-autora__dados p {
+  margin: 0;
+}
+
+.secao-autora a {
+  font-style: italic;
+  text-decoration: underline;
+}
+
+@media (min-width: 1024px) {
+  .secao-autora__dados {
+    margin: 0 3rem;
+  }
+}
+
+.secao-cta {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+/* --- FOOTER --- */
+.rodape {
+  background-color: #323534;
+  color: white;
+  font-size: .9rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: initial;
+      -ms-flex-pack: initial;
+          justify-content: initial;
+  padding-top: .8rem;
+}
+
+.rodape__principal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+.rodape__principal > * {
+  margin: 1rem 0;
+}
+
+.rodape__navegacao > li {
+  font-size: 1.1rem;
+  margin: 1rem;
+}
+
+.rodape__navegacao a {
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.rodape__navegacao a:hover {
+  color: #C083B9;
+}
+
+.rodape__logo {
+  max-width: 200px;
+}
+
+.rodape__redes-sociais a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: initial;
+  -webkit-box-direction: initial;
+      -ms-flex-direction: initial;
+          flex-direction: initial;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.rodape__redes-sociais a:hover {
+  color: #C083B9;
+}
+
+.rodape__redes-sociais img {
+  max-width: 10px;
+  margin-right: .5rem;
+}
+
+.rodape__redes-sociais span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: initial;
+  -webkit-box-direction: initial;
+      -ms-flex-direction: initial;
+          flex-direction: initial;
+  -webkit-box-align: initial;
+      -ms-flex-align: initial;
+          align-items: initial;
+  -webkit-box-pack: initial;
+      -ms-flex-pack: initial;
+          justify-content: initial;
+  font-size: 1.5rem;
+}
+
+.rodape__cc {
+  width: 100%;
+  background-color: #292A2A;
+  font-size: 1rem;
+  opacity: 0.5;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .rodape {
+    padding-top: 0;
+  }
+  .rodape__principal {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    width: 100%;
+  }
+  .rodape__logo img {
+    max-width: 250px;
+  }
+  .rodape__navegacao > li {
+    font-size: 1.5rem;
+  }
+}
+/*# sourceMappingURL=style.css.map */

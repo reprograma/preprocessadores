@@ -1,0 +1,23 @@
+
+.footer {
+    background-color: #161616;
+    margin-top: 80px;
+    text-align: center;
+    padding: 40px;
+    @include rgba_opacity($cor-branca, .5);
+    &__socialmedia {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 40px 0;
+    }
+    &__twitter,
+    &__facebook,
+    &__youtube {
+    opacity: 0.5;
+    margin: 0 10px;
+      &:hover{
+        opacity: 1;
+      }
+    }
+  }
